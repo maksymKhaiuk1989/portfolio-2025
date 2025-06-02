@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "./animations.css";
+@import "./utilities.css";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: oklch(76.8% 0.233 130.85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-anonymous-pro);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-anonymous-pro), monospace, sans-serif;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+img,
+svg {
+  filter: drop-shadow(0 0 4px#7CFC00);
+}

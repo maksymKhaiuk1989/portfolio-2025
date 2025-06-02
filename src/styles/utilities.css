@@ -1,0 +1,68 @@
+@layer utilities {
+  .bg-grid {
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(124, 252, 0, 0.02) 0px,
+        rgba(124, 252, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 24px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(124, 252, 0, 0.02) 0px,
+        rgba(124, 252, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 24px
+      ),
+      radial-gradient(
+        circle at center,
+        rgba(40, 77, 4, 0.14),
+        rgba(0, 0, 0, 0.2)
+      );
+  }
+
+  .screen-shadow-effect::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 40px rgba(10, 144, 30, 0.4),
+      0 0 60px rgba(0, 255, 0, 0.2);
+    pointer-events: none;
+  }
+
+  ::selection {
+    background-color: rgba(1, 17, 1, 0.781);
+    color: #3fdc0a;
+  }
+  .scanlines {
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    background-size: 100% 2px, 3px 100%;
+  }
+
+  .stripe-bg {
+    width: 100%;
+    height: 200px;
+    background: repeating-linear-gradient(
+      to right,
+      rgb(45, 241, 6) 0,
+      rgb(11, 240, 3) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  }
+
+  .border-shadow {
+    border: 1px solid #7ccf00;
+    border-radius: 1px;
+    box-shadow: 0 0 2px #7ccf00 inset, 0 0 2px #7ccf00;
+  }
+}
