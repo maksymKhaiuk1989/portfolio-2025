@@ -6,6 +6,7 @@
   animation: 5s ease 2000ms normal none infinite running glitch;
 }
 
+
 @keyframes blink {
   0%,
   100% {
@@ -41,14 +42,5 @@
   }
 
   65% {
-  }
-}
-
-@keyframes roll {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(0, -50%, 0);
   }
 }

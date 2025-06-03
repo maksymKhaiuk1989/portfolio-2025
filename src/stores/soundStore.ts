@@ -21,7 +21,7 @@ class SoundStore {
     tabTransition: new Howl({ src: "/assets/audio/sfx/tab-transition.wav" }),
   };
 
-  private soundLevel = 0.2;
+  private soundLevel = 0.15;
   private fadeDuration = 1000;
   muted = false;
   currentTrackIndex = 0;

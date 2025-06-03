@@ -1,17 +1,16 @@
+'use client';
 import { useEffect, useState } from "react";
 
 export const useFPS = () => {
   const [fps, setFPS] = useState("--");
+  const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
     let lastTime = 0;
     let frameCount = 0;
     let rafId: number;
 
     function updateFPS(time: number) {
-      if (!isMounted) return;
-
       if (lastTime === 0) {
         lastTime = time;
         rafId = requestAnimationFrame(updateFPS);
@@ -31,13 +30,16 @@ export const useFPS = () => {
       rafId = requestAnimationFrame(updateFPS);
     }
 
-    rafId = requestAnimationFrame(updateFPS);
+    if (isOn) {
+      rafId = requestAnimationFrame(updateFPS);
+    }
 
     return () => {
-      isMounted = false;
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isOn]);
 
-  return fps;
+  const toggleMeasureFPS = () => setIsOn(!isOn);
+
+  return { fps, toggleMeasureFPS };
 };

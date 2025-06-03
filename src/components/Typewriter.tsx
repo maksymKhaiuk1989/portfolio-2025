@@ -7,6 +7,7 @@ export interface TypewriterProps {
   className?: string;
   startDelay?: number;
   completeDelay?: number;
+  alwaysShowCursor?: boolean;
   cursor?: boolean;
   cursorStyle?: string;
   isActive?: boolean;
@@ -21,6 +22,7 @@ export const Typewriter: React.FC<TypewriterProps> = ({
   startDelay = 0,
   completeDelay = 700,
   cursor = true,
+  alwaysShowCursor = false,
   cursorStyle = "▮",
   isActive = false,
   charAmountRangePerType = 3,
@@ -69,16 +71,16 @@ export const Typewriter: React.FC<TypewriterProps> = ({
   ]);
 
   return (
-    <div className={`relative ${className} w-full`}>
-      <span className="absolute">
+    <div className={`relative ${className}  w-full`}>
+      <span className="absolute text-justify">
         {visibleText}
-        {cursor && isTyping && (
+        {(cursor && isTyping || alwaysShowCursor) && (
           <span className="animate-blink">{cursorStyle}</span>
         )}
       </span>
-      <span className={`invisible ${className}`} aria-hidden="true">
+      <div className={`invisible ${className}`} aria-hidden="true">
         {text}
-      </span>
+      </div>
     </div>
   );
 };
