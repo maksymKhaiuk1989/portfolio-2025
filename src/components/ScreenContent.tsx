@@ -12,6 +12,7 @@ export const ScreenContent = observer(() => {
 
   useEffect(() => {
     if (isAppReady) {
+      soundStore.init();
       soundStore.playSound("glitch");
     }
   }, [isAppReady]);

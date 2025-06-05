@@ -1,4 +1,4 @@
-import { Screen, Sound, ScreenContent } from "@/components";
+import { Screen, ScreenContent } from "@/components";
 
 const Home = () => {
   return (
@@ -6,7 +6,6 @@ const Home = () => {
       <Screen>
         <ScreenContent />
       </Screen>
-      <Sound />
     </div>
   );
 };
