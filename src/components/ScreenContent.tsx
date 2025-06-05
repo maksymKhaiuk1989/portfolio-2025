@@ -1,18 +1,27 @@
 "use client";
 import { BootLoader, MainLayout } from "@/components";
+import { GLITCH_VARIANT } from "@/constants/motion-variants";
 import { appStore } from "@/stores/appStore";
+import { soundStore } from "@/stores/soundStore";
 import { observer } from "mobx-react-lite";
 import { AnimatePresence, motion } from "motion/react";
+import { useEffect } from "react";
 
 export const ScreenContent = observer(() => {
   const { isAppReady } = appStore;
 
+  useEffect(() => {
+    if (isAppReady) {
+      soundStore.playSound("glitch");
+    }
+  }, [isAppReady]);
+
   return (
-    <div>
-      <AnimatePresence initial={false} mode="popLayout">
+    <div className={`${isAppReady && "roll-screen"}`}>
+      <AnimatePresence initial={false} mode="wait">
         {!isAppReady ? (
           <motion.div
-            variants={rollOut}
+            variants={GLITCH_VARIANT}
             key="boot"
             initial="initial"
             exit="exit"
@@ -21,7 +30,7 @@ export const ScreenContent = observer(() => {
           </motion.div>
         ) : (
           <motion.div
-            variants={rollIn}
+            variants={GLITCH_VARIANT}
             key="content"
             initial="initial"
             animate="animate"
@@ -34,44 +43,3 @@ export const ScreenContent = observer(() => {
     </div>
   );
 });
-
-const rollOut = {
-  initial: { y: "0vh", skew: "0deg", opacity: 1 },
-  exit: {
-    y: "-100vh",
-    skew: "-35deg",
-    scale: 0.6,
-    opacity: 0.1,
-    transition: {
-      duration: 0.6,
-      type: "tween",
-    },
-  },
-};
-const rollIn = {
-  initial: {
-    y: "100vh",
-    opacity: 0,
-    skew: "35deg",
-    scale: 0.9,
-  },
-  animate: {
-    y: "0vh",
-    opacity: 1,
-    skew: "0deg",
-    scale: 1,
-    transition: {
-      duration: 0.9,
-      type: "tween",
-    },
-  },
-  exit: {
-    y: "-100vh",
-    opacity: 0,
-    scale: 0.9,
-    transition: {
-      duration: 0.3,
-      type: "tween",
-    },
-  },
-};

@@ -19,6 +19,7 @@ class SoundStore {
     menuOut: new Howl({ src: "/assets/audio/sfx/menu-fly-out.wav" }),
     modalShow: new Howl({ src: "/assets/audio/sfx/modal-show.wav" }),
     tabTransition: new Howl({ src: "/assets/audio/sfx/tab-transition.wav" }),
+    glitch: new Howl({ src: "/assets/audio/sfx/glitch.mp3" }),
   };
 
   private soundLevel = 0.15;

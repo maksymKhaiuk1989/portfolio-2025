@@ -6,7 +6,6 @@
   animation: 5s ease 2000ms normal none infinite running glitch;
 }
 
-
 @keyframes blink {
   0%,
   100% {
