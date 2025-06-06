@@ -23,7 +23,7 @@ class SoundStore {
   };
 
   private soundLevel = 0.15;
-  private fadeDuration = 5000;
+  private fadeDuration = 4000;
   muted = false;
   currentTrackIndex = 0;
   currentBackgroundTrack: Howl | null = null;

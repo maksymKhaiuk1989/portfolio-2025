@@ -1,4 +1,4 @@
-import { CRTLayer, FrameLayer, StatsLayer } from "@/components";
+import { CRTLayer, FrameLayer, StatsLayer, LineLayer } from "@/components";
 import { ChildrenProp } from "@/types";
 
 export const Screen = ({ children }: ChildrenProp) => {
@@ -10,8 +10,9 @@ export const Screen = ({ children }: ChildrenProp) => {
         {children}
       </div>
       <div className="fixed inset-0 scanlines pointer-events-none" />
-      <div className="fixed inset-0 pointer-events-none z-30 vignette bg-[url(/assets/images/crt.png)] bg-no-repeat bg-size-[100%_100%]" />
+      <LineLayer />
       <CRTLayer />
+      <div className="fixed inset-0 pointer-events-none z-100 vignette bg-[url(/assets/images/crt.png)] bg-no-repeat bg-size-[100%_100%]" />
     </div>
   );
 };

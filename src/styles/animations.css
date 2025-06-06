@@ -43,3 +43,13 @@
   65% {
   }
 }
+
+@keyframes line-move {
+  50% {
+    transform: translateY(100vh);
+  }
+}
+
+.line-move {
+  animation: line-move 30s linear infinite;
+}

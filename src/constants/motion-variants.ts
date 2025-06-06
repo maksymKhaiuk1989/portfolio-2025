@@ -5,7 +5,7 @@ export const GLITCH_VARIANT = {
     skewX: [-3, 13, -14, 0],
     scaleY: [1, 1.1, 0.9, 1],
     transition: {
-      duration: 0.65,
+      duration: 0.45,
       ease: "linear",
       times: [0.2, 0.3, 0.6, 0.8],
     },
@@ -15,7 +15,7 @@ export const GLITCH_VARIANT = {
     scaleY: [1, 1.1, 0.8, 1.2],
     skewX: [0, -12, 16, 0],
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: "linear",
       times: [0.1, 0.2, 0.55, 0.6],
     },
