@@ -69,4 +69,46 @@
   .absolute-center {
     @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
   }
+
+  .before-corner::before,
+  .after-corner::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    border: 1px solid #7cfc00;
+
+  }
+
+  .before-corner::before {
+    left: -10px;
+    bottom: -5px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .after-corner::after {
+    right: -10px;
+    bottom: -5px;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  @media (max-width: 640px) {
+    .before-corner::before,
+    .after-corner::after {
+      width: 4px;
+      height: 16px;
+    }
+
+    .before-corner::before {
+      left: -6px;
+      bottom: -5px;
+    }
+
+    .after-corner::after {
+      right: -6px;
+      bottom: -5px;
+    }
+  }
 }

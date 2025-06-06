@@ -18,29 +18,28 @@ export const ScreenContent = observer(() => {
   }, [isAppReady]);
 
   return (
-    <div className={`${isAppReady && "roll-screen"}`}>
-      <AnimatePresence initial={false} mode="wait">
-        {!isAppReady ? (
-          <motion.div
-            variants={GLITCH_VARIANT}
-            key="boot"
-            initial="initial"
-            exit="exit"
-          >
-            <BootLoader />
-          </motion.div>
-        ) : (
-          <motion.div
-            variants={GLITCH_VARIANT}
-            key="content"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <MainLayout />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <AnimatePresence initial={false} mode="wait">
+      {!isAppReady ? (
+        <motion.div
+          variants={GLITCH_VARIANT}
+          key="boot"
+          initial="initial"
+          exit="exit"
+          className="flex m-auto"
+        >
+          <BootLoader />
+        </motion.div>
+      ) : (
+        <motion.div
+          variants={GLITCH_VARIANT}
+          key="content"
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <MainLayout />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 });

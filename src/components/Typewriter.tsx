@@ -71,17 +71,17 @@ export const Typewriter: React.FC<TypewriterProps> = ({
   ]);
 
   return (
-    <div className={`relative ${className}  w-full`}>
-      <span className="absolute text-justify">
+    <span className={`relative ${className}`}>
+      <div className="absolute">
         {visibleText}
-        {(cursor && isTyping || alwaysShowCursor) && (
+        {((cursor && isTyping) || alwaysShowCursor) && (
           <span className="animate-blink">{cursorStyle}</span>
         )}
-      </span>
+      </div>
       <div className={`invisible ${className}`} aria-hidden="true">
         {text}
       </div>
-    </div>
+    </span>
   );
 };
 

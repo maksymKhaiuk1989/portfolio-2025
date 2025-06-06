@@ -1,6 +1,9 @@
+import { Header } from "@/components";
+
 export const MainLayout = () => {
   return (
-    <div className="text-2xl">
+    <div className="text-2xl w-full h-full">
+      <Header className="mb-8" />
       <h1>HELLO WORLD</h1>
       <p>
         At vero eos et accusamus et iusto odio dignissimos ducimus qui

@@ -47,7 +47,7 @@ export const BootLoader = observer(() => {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col m-auto w-min">
       {steps.map((step, i) => (
         <Typewriter
           key={step.label + i}

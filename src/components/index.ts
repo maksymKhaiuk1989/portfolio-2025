@@ -8,3 +8,4 @@ export { BootLoader } from "./BootLoader";
 export { MainLayout } from "./MainLayout";
 export { ScreenContent } from "./ScreenContent";
 export { LineLayer } from "./screen/LineLayer";
+export { Header } from "./Header";

@@ -6,7 +6,7 @@ export const Screen = ({ children }: ChildrenProp) => {
     <div className="fixed inset-0 flex overflow-hidden bg-grid bg-center screen-shadow-effect">
       <FrameLayer />
       <StatsLayer />
-      <div className="relative z-0 max-w-[800px] px-4 py-20 m-auto w-full flex flex-col items-center justify-center glitch ">
+      <div className="relative z-0 max-w-[800px] flex overflow-hidden px-4 py-14 sm:py-20 mx-auto w-full glitch ">
         {children}
       </div>
       <div className="fixed inset-0 scanlines pointer-events-none" />
